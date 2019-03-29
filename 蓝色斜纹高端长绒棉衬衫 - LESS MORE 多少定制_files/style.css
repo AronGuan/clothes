@@ -1,0 +1,145 @@
+@charset "utf-8";
+.lof-slidecontent {
+	position:relative;
+	overflow:hidden;
+	width:100%;
+	height:460px;
+}
+.lof-slidecontent .preload {
+	height:100%;
+	width:100%;
+	background:#FFF;
+	position:absolute;
+	top:0;
+	left:0;
+	z-index:100000;
+	color:#FFF;
+	text-align:center
+}
+.lof-slidecontent .preload div {
+	height:100%;
+	width:100%;
+}
+/* main flash */
+.lof-main-wapper {
+	margin-right:auto;
+	overflow:hidden;
+	padding:0px;
+	height:100%;
+	width:598px;
+	position:relative;
+	overflow:hidden;
+}
+.lof-main-wapper .lof-main-item {
+	overflow:hidden;
+	padding:0px;
+	margin:0px;
+	height:100%;
+	width:100%;
+	position:absolute;
+}
+.lof-main-wapper .lof-main-item {
+	text-align:center;
+}
+.lof-main-wapper .lof-main-item img {
+	max-width:100%;
+}
+.lof-main-item-desc {
+	z-index:100px;
+	position:absolute;
+	top:150px;
+	left:50px;
+	width:400px;
+}
+.lof-main-item-desc p {
+	color:#FFF;
+	margin:0 8px;
+	padding:8px 0
+}
+.lof-main-item-desc h3 a {
+	color:#FFF;
+	margin:0;
+	font-size:140%;
+	padding:20px 8px 2px;
+	font-family:"Trebuchet MS", Trebuchet, Arial, Verdana, sans-serif;
+}
+.lof-main-item-desc h3 a:hover {
+	color:#FF6;
+	text-decoration:underline;
+}
+/* item navigator */
+ul.lof-navigator {
+	top:0;
+	padding:0;
+	margin:0;
+	position:absolute;
+	width:100%;
+	height:100%;
+}
+ul.lof-navigator li {
+	cursor:hand;
+	cursor:pointer;
+	list-style:none;
+	width:100%;
+	padding:0;
+	margin:0;
+	overflow:hidden;
+	margin-bottom:4px;
+}
+.lof-navigator-outer {
+	position:absolute;
+	right:0;
+	top:00px;
+	z-index:100;
+	height:600px;
+	width:182px;
+	overflow:hidden;
+	color:#FFF
+}
+.lof-navigator li.active {
+	color:#FFF
+}
+.lof-navigator li h3 {
+	color:#FFF;
+	font-size:100%;
+	padding:15px 0 0 !important;
+	margin:0;
+}
+.lof-navigator li div {
+	color:#FFF;
+	height:100%;
+	position:relative;
+	margin-left:15px;
+}
+.lof-navigator li.active div {
+	color:#FFF;
+}
+.lof-navigator li img {
+	height: 105px;
+	width: 136px;
+	float:left;
+	padding:3px;
+	border:#C5C5C5 solid 1px;
+}
+.lof-navigator li.active img {
+	border-color:red;
+}
+.lof-navigator li.active h3 {
+	color:#FFF;
+}
+.lof-next {
+	position:absolute;
+	top:0;
+	height:30px;
+	background:#F9F9F9;
+	display:block;
+	width:100%;
+}
+.lof-previous {
+	position:absolute;
+	bottom:0;
+	height:30px;
+	background:#F9F9F9;
+	display:block;
+	width:100%;
+}

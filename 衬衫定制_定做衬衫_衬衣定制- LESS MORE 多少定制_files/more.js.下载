@@ -1,0 +1,141 @@
+var winWidth = $(window).width()
+var View     = 3
+var Height   = $('.khhp_img img').height()
+var Index    = 0
+var newsIndex = 0
+var Size     = $('.khhp_size .swiper-slide').size()
+var Str      = '<ul class="khhp_btn">'
+var newSize  = $('.news_info .swiper-slide').size()
+var newStr   = '<ul class="khhp_btn news_an">'
+for(var i=0;i<Size;i++){
+	Str += '<li></li>'
+}
+Str += '</ul>'
+$('.khhp_list1').append(Str)
+for(var i=0;i<newSize;i++) {
+	newStr += '<li></li>'
+}
+newStr += '</ul>'
+$('.news_btn').prepend(newStr)
+$('.news_an li').first().addClass('khhp_btn_active')
+$(window).resize(function(){
+	Height = $('.khhp_img img').height()
+	$('.khhp_scroll').height(Height)
+})
+View = winWidth > 1200 ? 3 : 1
+var mySwiper1 = new Swiper ('.banner', {
+	direction: 'horizontal',
+	loop: true,
+	autoplay:3000,
+	autoplayDisableOnInteraction:false,
+	speed:1200,
+	pagination: '.swiper-pagination',
+	nextButton: '.swiper-button-next',
+	prevButton: '.swiper-button-prev',
+	
+ })  
+var mySwiper1 = new Swiper ('.bannerm', {
+	direction: 'horizontal',
+	loop: true,
+	autoplay:3000,
+	autoplayDisableOnInteraction:false,
+	speed:1200,
+	pagination: '.swiper-pagination',
+	nextButton: '.swiper-button-next',
+	prevButton: '.swiper-button-prev',
+	
+ }) 
+ var mySwiper6 = new Swiper ('.hangye', {
+	direction: 'horizontal',
+	loop: true,
+	autoplay:3000,
+	autoplayDisableOnInteraction:false,
+	speed:600,
+	nextButton: '.swiper-button-next',
+	prevButton: '.swiper-button-prev',
+	
+ }) 
+  var mySwiper2 = new Swiper ('.mxtz_list', {
+	direction: 'horizontal',
+	loop: true,
+	autoplay:3000,
+	autoplayDisableOnInteraction:false,
+	speed:600,
+	slidesPerView:View,
+	nextButton: '.swiper-button-next',
+	prevButton: '.swiper-button-prev',
+	
+  }) 
+  var mySwiper3 = new Swiper ('.khhp_scroll', {
+	direction: 'vertical',
+	loop: true,
+	autoplay:3000,
+	autoplayDisableOnInteraction:false,
+	speed:600,
+	onSlideChangeEnd: function(mySwiper3){
+	  Index = mySwiper3.realIndex
+	  $('.khhp_btn li').eq(Index).addClass('khhp_btn_active').siblings().removeClass('khhp_btn_active')
+	}
+  }) 
+  var spanArr  = new Array('定制攻略','公司动态','媒体报道','常见问题')
+  var mySwiper4 = new Swiper ('.news_info', {
+	direction: 'vertical',
+	loop: false,
+	slidesPerView:1,
+	speed:600,
+	pagination: '.news_btn .swiper-pagination',
+	paginationClickable:true,
+	onSlideChangeEnd: function(mySwiper4){
+	  newsIndex = mySwiper4.realIndex
+	  $('.news_an li').eq(newsIndex).addClass('khhp_btn_active').siblings().removeClass('khhp_btn_active')
+	},
+	paginationBulletRender: function (mySwiper4, index) {
+	  return '<span class="swiper-pagination-bullet">' + spanArr[index] + '</span>';
+	}
+  }) 
+  
+  var galleryTop1 = new Swiper('.dian_img', {
+	direction: 'horizontal',
+	spaceBetween: 10,
+  });
+
+  var galleryThumbs1 = new Swiper('.dian_btn', {
+	  direction: 'horizontal',
+	  spaceBetween: 10,
+	  centeredSlides: true,
+	  slidesPerView: 'auto',
+	  touchRatio: 0.2,
+	  slideToClickedSlide: true,
+	  nextButton: '.swiper-button-next',
+	  prevButton: '.swiper-button-prev',
+  });
+
+  galleryTop1.params.control = galleryThumbs1;
+  galleryThumbs1.params.control = galleryTop1;
+
+
+var mySwiper5 = new Swiper ('.tc_box', {
+	direction: 'horizontal',
+	loop: true,
+	slidesPerView:4,
+	autoplay:3000,
+	autoplayDisableOnInteraction:false,
+	nextButton: '.swiper-button-next',
+	prevButton: '.swiper-button-prev',
+	
+  }) 
+  
+$('.xiala li').hide().first().show()
+$('.menu').click(function(){
+	$('.m_link').slideToggle()
+})
+$('#moreone').find('.xf_type').mouseover(function(){
+	var _index = $(this).index()
+	$(this).addClass('xf_active').siblings('.xf_type').removeClass('xf_active')
+	$('#moreone').find('.yifu').eq(_index-1).stop().animate({opacity:1},600).css('display','block').siblings('.yifu').stop().animate({opacity:0},600).css('display','none')
+})
+$('#moretwo').find('.xf_type').mouseover(function(){
+	var _index = $(this).index()
+	$(this).addClass('xf_active').siblings('.xf_type').removeClass('xf_active')
+	$('#moretwo').find('.yifu').eq(_index-1).stop().animate({opacity:1},600).css('display','block').siblings('.yifu').stop().animate({opacity:0},600).css('display','none')
+})
